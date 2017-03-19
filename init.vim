@@ -168,6 +168,7 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('tpope/vim-surround')
   call dein#add('YankRing.vim')
   call dein#add('bling/vim-airline')
+  call dein#add('janko-m/vim-test')
 
   " Required:
   call dein#end()
@@ -252,6 +253,13 @@ noremap <LEADER>z :NERDTreeToggle<CR>
 " Find current fule on menu
 nnoremap <LEADER>f :NERDTreeFind<CR>
 "}}}
+" vim test {{{
+let test#strategy = 'vimux'
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+" }}}
 " BACKUP {{{
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp

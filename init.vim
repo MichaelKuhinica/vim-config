@@ -116,7 +116,7 @@ inoremap jj <ESC>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 " save session
-nnoremap <leader>s :mksession<CR>
+nnoremap <leader>s :mksession!<CR>
 " Traverse windows vertically
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l

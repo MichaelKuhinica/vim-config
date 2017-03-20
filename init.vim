@@ -167,6 +167,7 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('YankRing.vim')
   call dein#add('bling/vim-airline')
   call dein#add('janko-m/vim-test')
+  call dein#add('Shougo/deoplete.nvim')
 
   " Required:
   call dein#end()
@@ -265,6 +266,13 @@ nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 noremap <Leader>[ :bprevious<CR>
 noremap <Leader>] :bnext<CR>
+" }}}
+" Deoplete {{{
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 " }}}
 " BACKUP {{{
 set backup

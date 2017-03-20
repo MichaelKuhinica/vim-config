@@ -167,6 +167,7 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('YankRing.vim')
   call dein#add('bling/vim-airline')
   call dein#add('janko-m/vim-test')
+  call dein#add('kchmck/vim-coffee-script')
   call dein#add('Shougo/deoplete.nvim')
 
   " Required:

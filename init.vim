@@ -267,6 +267,10 @@ nnoremap <S-Tab> :bprevious<CR>
 noremap <Leader>[ :bprevious<CR>
 noremap <Leader>] :bnext<CR>
 " }}}
+" ACK {{{
+" Use ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" }}}
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1

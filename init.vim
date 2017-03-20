@@ -1,3 +1,4 @@
+set nocompatible
 " COLOR {{{
 " colorscheme
 set background=dark

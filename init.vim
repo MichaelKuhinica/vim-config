@@ -169,6 +169,7 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('janko-m/vim-test')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('tpope/vim-repeat')
 
   " Required:
   call dein#end()

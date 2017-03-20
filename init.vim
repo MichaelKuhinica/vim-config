@@ -107,9 +107,6 @@ vnoremap <C-j> 12j
 vnoremap <C-k> 12k
 " highlight last inserted text
 nnoremap gV `[v`]
-" Tabs
-nnoremap <LEADER>[ :bp<CR>
-nnoremap <LEADER>] :bn<CR>
 " }}}
 " LEADER {{{
 " leader is space
@@ -260,6 +257,14 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+" }}}
+" Bclose {{{
+nnoremap <silent> <Leader>q :Bclose<CR>
+" Tabs
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+noremap <Leader>[ :bprevious<CR>
+noremap <Leader>] :bnext<CR>
 " }}}
 " BACKUP {{{
 set backup

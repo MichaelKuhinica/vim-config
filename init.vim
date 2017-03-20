@@ -1,6 +1,8 @@
 " COLOR {{{
 " colorscheme
 set background=dark
+"NOTE: this has to execute before setting any colorscheme
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 colorscheme molokai
 " turn on syntax highlighting
 syntax on
@@ -50,8 +52,6 @@ match ExtraWhitespace /\s\+$/
 autocmd WinEnter,InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd BufWinLeave * call clearmatches()
-"NOTE: this has to execute before setting any colorscheme
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 " Indent
 set autoindent
 set copyindent

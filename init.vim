@@ -17,6 +17,10 @@ set softtabstop=2
 set expandtab
 " }}}
 " UI CONFIG {{{
+set encoding=utf-8
+set t_Co=256
+set termencoding=utf-8
+
 " adds line numbers to the left
 set number
 " Relative line numbers
@@ -40,6 +44,8 @@ set timeoutlen=1000 ttimeoutlen=0
 set clipboard=unnamed
 "store lots of :cmdline history
 set history=1000
+" Keep history when changing buffers
+set hidden
 "mark the ideal max text width
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -113,8 +119,6 @@ nnoremap gV `[v`]
 let mapleader = "\<Space>"
 " jj to exit insert mode quickly
 inoremap jj <ESC>
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
 " save session
 nnoremap <leader>s :mksession!<CR>
 " Traverse windows vertically
@@ -142,14 +146,13 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('sjl/gundo.vim')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('mileszs/ack.vim')
-  call dein#add('tpope/vim-fugitive', {'on_cmd' : ['Gdiff', 'Gstatus']})
+  call dein#add('tpope/vim-fugitive', {'on_cmd' : ['Gdiff', 'Gstatus', 'Gdiff', 'Gblame', 'Gcommit']})
   call dein#add('pangloss/vim-javascript')
   call dein#add('cakebaker/scss-syntax.vim')
   call dein#add('plasticboy/vim-markdown')
-  call dein#add('JamshedVesuna/vim-markdown-preview')
+  " call dein#add('JamshedVesuna/vim-markdown-preview')
   call dein#add('jszakmeister/vim-togglecursor')
   call dein#add('tomtom/tlib_vim')
   call dein#add('tomtom/tcomment_vim')
@@ -164,12 +167,16 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/syntastic')
   call dein#add('tpope/vim-surround')
-  call dein#add('YankRing.vim')
+  call dein#add('vim-scripts/YankRing.vim')
   call dein#add('bling/vim-airline')
   call dein#add('janko-m/vim-test')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('tpope/vim-repeat')
+  call dein#add('groenewege/vim-less')
+  call dein#add('mxw/vim-jsx')
+  call dein#add('Valloric/MatchTagAlways')
+  call dein#add('alvan/vim-closetag')
 
   " Required:
   call dein#end()
@@ -222,9 +229,9 @@ else
 endif
 " }}}
 " Markdown Preview {{{
-let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey='<C-s>'
-let vim_markdown_preview_toggle=2
+" let vim_markdown_preview_github=1
+" let vim_markdown_preview_hotkey='<C-s>'
+" let vim_markdown_preview_toggle=2
 " }}}
 " GitGutter {{{
 nmap <Leader>hp <Plug>GitGutterPreviewHunk
@@ -243,6 +250,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_javascript_checkers = ['eslint']
 " }}}
 " YankRing {{{
 let g:yankring_history_file='.yankring_history'
@@ -272,6 +280,14 @@ noremap <Leader>] :bnext<CR>
 " ACK {{{
 " Use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
+" }}}
+" vim-closetag {{{
+let g:closetag_filenames = "*.html,*.xhtml,*.js,*.erb"
+let g:closetag_emptyTags_caseSensitive = 1
+" }}}
+" vim-jsx {{{
+" Enable on js files as well as jsx
+let g:jsx_ext_required = 0
 " }}}
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1

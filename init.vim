@@ -1,13 +1,4 @@
 set nocompatible
-" COLOR {{{
-" colorscheme
-set background=dark
-"NOTE: this has to execute before setting any colorscheme
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
-colorscheme molokai
-" turn on syntax highlighting
-syntax on
-" }}}
 " SPACES AND TABS {{{
 " number of visual spaces per TAB
 set tabstop=2
@@ -184,6 +175,7 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('mxw/vim-jsx')
   call dein#add('Valloric/MatchTagAlways')
   call dein#add('alvan/vim-closetag')
+  call dein#add('morhetz/gruvbox')
 
   " Required:
   call dein#end()
@@ -199,6 +191,16 @@ filetype plugin indent on
 "endif
 
 "End dein Scripts-------------------------
+" }}}
+" COLOR {{{
+" colorscheme
+set background=dark
+"NOTE: this has to execute before setting any colorscheme
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+" colorscheme molokai
+colorscheme gruvbox
+" turn on syntax highlighting
+syntax on
 " }}}
 " Airline {{{
 let g:airline_powerline_fonts = 1

@@ -37,6 +37,13 @@ set wildmenu
 set lazyredraw
 " highlight matching [{()}]
 set showmatch
+" Show non-printable characters.
+set list
+if has('multi_byte') && &encoding ==# 'utf-8'
+  let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
+else
+  let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
+endif
 " Visual bell only
 set visualbell
 set timeoutlen=1000 ttimeoutlen=0

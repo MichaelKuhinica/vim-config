@@ -74,7 +74,7 @@ set incsearch
 " highlight matches
 set hlsearch
 " turn off search highlight
-nnoremap <LEADER>, :noh<CR>
+nnoremap <LEADER>, :noh<cr>
 "ignores case
 set ignorecase
 "do not ignore case if explicitly defined on the search

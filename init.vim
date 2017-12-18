@@ -170,6 +170,7 @@ if dein#load_state('/Users/mkuhinica/.vim/bundle')
   call dein#add('mxw/vim-jsx')
   call dein#add('Valloric/MatchTagAlways')
   call dein#add('alvan/vim-closetag')
+  call dein#add('vimwiki/vimwiki.git')
   call dein#add('morhetz/gruvbox')
 
   " Required:

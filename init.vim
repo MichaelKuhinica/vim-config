@@ -101,16 +101,11 @@ set foldmethod=indent
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-" move to beginning/end of line
-nnoremap B ^
-nnoremap E $
 " Use control+up/down to move fast
 nnoremap <C-j> 12j
 nnoremap <C-k> 12k
 vnoremap <C-j> 12j
 vnoremap <C-k> 12k
-" highlight last inserted text
-nnoremap gV `[v`]
 " }}}
 " LEADER {{{
 " leader is space
